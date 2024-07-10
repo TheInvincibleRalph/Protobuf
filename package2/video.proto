@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package diff.package2;
+
+import "package2/videotype.proto";
+
+message Video {
+    package2.VideoType type = 1;
+    string url = 2;
+}

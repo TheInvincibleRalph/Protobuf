@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package diff.package1;
+
+import "package2/video.proto";
+import "package2/article.proto";
+
+message Lecture {
+    oneof content { //oneof is used here because the content of the lecture can either be an article or a video (meaning they are mutually exclusive)
+        package2.Video video = 1;
+        package2.Article article = 2;
+    }
+    }

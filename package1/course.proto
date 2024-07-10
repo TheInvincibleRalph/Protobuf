@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package diff.package1;
+
+message Course {
+    string name = 1; //name of the course
+    repeated string authors =2; //authors of the course
+    map<string, Lecture> lectures = 3; //lecture name is linked to a lecture platform
+}
