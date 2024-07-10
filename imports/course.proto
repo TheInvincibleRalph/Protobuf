@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package imports.course_message;
+package imports;
+
 message Course {
     string name = 1; //name of the course
     repeated string authors =2; //authors of the course

@@ -2,13 +2,13 @@
 
 // package imports.lecture_message;
 
-// import "imports/video.proto";
-// import "imports/article.proto";
+// import "imports.video_message/video.proto";
+// import "imports.article_message/article.proto";
 
 // message Lecture {
 //     oneof content { //oneof is used here because the content of the lecture can either be an article or a video (meaning they are mutually exclusive)
 //         imports.video_message.Video video = 1;
-//         imports.article_message.Article article = 2;
+//         imports.article_message.Article article = 2; //somtimes there is need to be specific when using an imported type, this often is the case whenever the type is located in a hierarchical folder/package as thus: parentFolder.ChildFolder...Type
 //     }
 //     }
 
@@ -17,12 +17,12 @@ syntax = "proto3";
 
 package imports;
 
-import "imports/video.proto";
+import "imports/video.proto"; //the need to specify the full path is because we have different directories/folders in this project. This helps the compiler avoid ambiguities and ensure the correct files are used
 import "imports/article.proto";
 
 message Lecture {
     oneof content { //oneof is used here because the content of the lecture can either be an article or a video (meaning they are mutually exclusive)
         Video video = 1;
-        Article article = 2;
+        Article article = 2; //type Article exists in the article.proto file within the same folder.
     }
     }
