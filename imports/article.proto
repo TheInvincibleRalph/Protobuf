@@ -1,0 +1,15 @@
+// syntax = "proto3";
+
+// package imports.article_message;
+// message Article {
+//     string text = 1;
+// }
+
+
+
+syntax = "proto3";
+
+package imports;
+message Article {
+    string text = 1;
+}
